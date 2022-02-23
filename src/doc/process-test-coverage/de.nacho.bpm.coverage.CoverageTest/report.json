@@ -1,0 +1,87 @@
+{
+  "suites": [
+    {
+      "id": "[engine:junit-jupiter]/[class:de.nacho.bpm.coverage.CoverageTest]",
+      "name": "de.nacho.bpm.coverage.CoverageTest",
+      "runs": [
+        {
+          "id": "[engine:junit-jupiter]/[class:de.nacho.bpm.coverage.CoverageTest]/[method:coverage_100_fails_because_of_Link_Intermediate_Throw_Event()]",
+          "name": "coverage_100_fails_because_of_Link_Intermediate_Throw_Event",
+          "events": [
+            {
+              "source": "FLOW_NODE",
+              "type": "START",
+              "definitionKey": "StartEvent_1",
+              "elementType": "startEvent",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "FLOW_NODE",
+              "type": "END",
+              "definitionKey": "StartEvent_1",
+              "elementType": "startEvent",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "SEQUENCE_FLOW",
+              "type": "TAKE",
+              "definitionKey": "Flow_1o2r0ds",
+              "elementType": "sequenceFlow",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "FLOW_NODE",
+              "type": "START",
+              "definitionKey": "Event_03n57hz",
+              "elementType": "intermediateCatchEvent",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "FLOW_NODE",
+              "type": "END",
+              "definitionKey": "Event_03n57hz",
+              "elementType": "intermediateCatchEvent",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "SEQUENCE_FLOW",
+              "type": "TAKE",
+              "definitionKey": "Flow_1sxrbob",
+              "elementType": "sequenceFlow",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "FLOW_NODE",
+              "type": "START",
+              "definitionKey": "Event_0rssftv",
+              "elementType": "endEvent",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            },
+            {
+              "source": "FLOW_NODE",
+              "type": "END",
+              "definitionKey": "Event_0rssftv",
+              "elementType": "endEvent",
+              "modelKey": "Testprocess",
+              "timestamp": 1645635875
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "models": [
+    {
+      "key": "Testprocess",
+      "totalElementCount": 6,
+      "xml": "\u003c?xml version\u003d\"1.0\" encoding\u003d\"UTF-8\" standalone\u003d\"no\"?\u003e\n\u003cbpmn:definitions xmlns:bpmn\u003d\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi\u003d\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc\u003d\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:di\u003d\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler\u003d\"http://camunda.org/schema/modeler/1.0\" exporter\u003d\"Camunda Modeler\" exporterVersion\u003d\"4.12.0\" expressionLanguage\u003d\"http://www.w3.org/1999/XPath\" id\u003d\"Definitions_1ll84yq\" modeler:executionPlatform\u003d\"Camunda Platform\" modeler:executionPlatformVersion\u003d\"7.15.0\" targetNamespace\u003d\"http://bpmn.io/schema/bpmn\" typeLanguage\u003d\"http://www.w3.org/2001/XMLSchema\"\u003e\n  \u003cbpmn:collaboration id\u003d\"Collaboration_0jx27kr\" isClosed\u003d\"false\"\u003e\n    \u003cbpmn:participant id\u003d\"Participant_Testprocess\" name\u003d\"Testprocess\" processRef\u003d\"Testprocess\"/\u003e\n  \u003c/bpmn:collaboration\u003e\n  \u003cbpmn:process id\u003d\"Testprocess\" isClosed\u003d\"false\" isExecutable\u003d\"true\" processType\u003d\"None\"\u003e\n    \u003cbpmn:laneSet id\u003d\"LaneSet_0vlbint\"\u003e\n      \u003cbpmn:lane id\u003d\"Lane_1yrc6zf\"\u003e\n        \u003cbpmn:flowNodeRef\u003eStartEvent_1\u003c/bpmn:flowNodeRef\u003e\n        \u003cbpmn:flowNodeRef\u003eEvent_ThrowLinkEvent\u003c/bpmn:flowNodeRef\u003e\n      \u003c/bpmn:lane\u003e\n      \u003cbpmn:lane id\u003d\"Lane_1dngsvi\"\u003e\n        \u003cbpmn:flowNodeRef\u003eEvent_03n57hz\u003c/bpmn:flowNodeRef\u003e\n        \u003cbpmn:flowNodeRef\u003eEvent_0rssftv\u003c/bpmn:flowNodeRef\u003e\n      \u003c/bpmn:lane\u003e\n    \u003c/bpmn:laneSet\u003e\n    \u003cbpmn:startEvent id\u003d\"StartEvent_1\" isInterrupting\u003d\"true\" parallelMultiple\u003d\"false\"\u003e\n      \u003cbpmn:outgoing\u003eFlow_1o2r0ds\u003c/bpmn:outgoing\u003e\n    \u003c/bpmn:startEvent\u003e\n    \u003cbpmn:intermediateThrowEvent id\u003d\"Event_ThrowLinkEvent\" name\u003d\"Link Event\"\u003e\n      \u003cbpmn:incoming\u003eFlow_1o2r0ds\u003c/bpmn:incoming\u003e\n      \u003cbpmn:linkEventDefinition id\u003d\"LinkEventDefinition_0epq7zx\" name\u003d\"Link Event\"/\u003e\n    \u003c/bpmn:intermediateThrowEvent\u003e\n    \u003cbpmn:sequenceFlow id\u003d\"Flow_1o2r0ds\" sourceRef\u003d\"StartEvent_1\" targetRef\u003d\"Event_ThrowLinkEvent\"/\u003e\n    \u003cbpmn:sequenceFlow id\u003d\"Flow_1sxrbob\" sourceRef\u003d\"Event_03n57hz\" targetRef\u003d\"Event_0rssftv\"/\u003e\n    \u003cbpmn:intermediateCatchEvent id\u003d\"Event_03n57hz\" name\u003d\"Link Event\" parallelMultiple\u003d\"false\"\u003e\n      \u003cbpmn:outgoing\u003eFlow_1sxrbob\u003c/bpmn:outgoing\u003e\n      \u003cbpmn:linkEventDefinition id\u003d\"LinkEventDefinition_00vge5z\" name\u003d\"Link Event\"/\u003e\n    \u003c/bpmn:intermediateCatchEvent\u003e\n    \u003cbpmn:endEvent id\u003d\"Event_0rssftv\"\u003e\n      \u003cbpmn:incoming\u003eFlow_1sxrbob\u003c/bpmn:incoming\u003e\n    \u003c/bpmn:endEvent\u003e\n  \u003c/bpmn:process\u003e\n  \u003cbpmndi:BPMNDiagram id\u003d\"BPMNDiagram_1\"\u003e\n    \u003cbpmndi:BPMNPlane bpmnElement\u003d\"Collaboration_0jx27kr\" id\u003d\"BPMNPlane_1\"\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"Participant_Testprocess\" id\u003d\"Participant_0w7zg56_di\" isHorizontal\u003d\"true\"\u003e\n        \u003cdc:Bounds height\u003d\"250\" width\u003d\"331\" x\u003d\"129\" y\u003d\"80\"/\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"Lane_1yrc6zf\" id\u003d\"Lane_1yrc6zf_di\" isHorizontal\u003d\"true\"\u003e\n        \u003cdc:Bounds height\u003d\"125\" width\u003d\"301\" x\u003d\"159\" y\u003d\"80\"/\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"Lane_1dngsvi\" id\u003d\"Lane_1dngsvi_di\" isHorizontal\u003d\"true\"\u003e\n        \u003cdc:Bounds height\u003d\"125\" width\u003d\"301\" x\u003d\"159\" y\u003d\"205\"/\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n      \u003cbpmndi:BPMNEdge bpmnElement\u003d\"Flow_1o2r0ds\" id\u003d\"Flow_1o2r0ds_di\"\u003e\n        \u003cdi:waypoint x\u003d\"225\" y\u003d\"140\"/\u003e\n        \u003cdi:waypoint x\u003d\"372\" y\u003d\"140\"/\u003e\n      \u003c/bpmndi:BPMNEdge\u003e\n      \u003cbpmndi:BPMNEdge bpmnElement\u003d\"Flow_1sxrbob\" id\u003d\"Flow_1sxrbob_di\"\u003e\n        \u003cdi:waypoint x\u003d\"225\" y\u003d\"260\"/\u003e\n        \u003cdi:waypoint x\u003d\"372\" y\u003d\"260\"/\u003e\n      \u003c/bpmndi:BPMNEdge\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"StartEvent_1\" id\u003d\"_BPMNShape_StartEvent_2\"\u003e\n        \u003cdc:Bounds height\u003d\"36\" width\u003d\"36\" x\u003d\"189\" y\u003d\"122\"/\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"Event_ThrowLinkEvent\" id\u003d\"Event_10f5yk9_di\"\u003e\n        \u003cdc:Bounds height\u003d\"36\" width\u003d\"36\" x\u003d\"372\" y\u003d\"122\"/\u003e\n        \u003cbpmndi:BPMNLabel\u003e\n          \u003cdc:Bounds height\u003d\"14\" width\u003d\"53\" x\u003d\"370\" y\u003d\"165\"/\u003e\n        \u003c/bpmndi:BPMNLabel\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"Event_03n57hz\" id\u003d\"Event_040m0z7_di\"\u003e\n        \u003cdc:Bounds height\u003d\"36\" width\u003d\"36\" x\u003d\"189\" y\u003d\"242\"/\u003e\n        \u003cbpmndi:BPMNLabel\u003e\n          \u003cdc:Bounds height\u003d\"14\" width\u003d\"53\" x\u003d\"181\" y\u003d\"285\"/\u003e\n        \u003c/bpmndi:BPMNLabel\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n      \u003cbpmndi:BPMNShape bpmnElement\u003d\"Event_0rssftv\" id\u003d\"Event_0rssftv_di\"\u003e\n        \u003cdc:Bounds height\u003d\"36\" width\u003d\"36\" x\u003d\"372\" y\u003d\"242\"/\u003e\n      \u003c/bpmndi:BPMNShape\u003e\n    \u003c/bpmndi:BPMNPlane\u003e\n  \u003c/bpmndi:BPMNDiagram\u003e\n\u003c/bpmn:definitions\u003e\n"
+    }
+  ]
+}
